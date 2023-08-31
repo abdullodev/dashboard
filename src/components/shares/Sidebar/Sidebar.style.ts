@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 
 export const SidebarStyled = styled.div`
+  padding: 10px;
+
   header {
     display: flex;
     justify-content: flex-start;
@@ -20,9 +22,9 @@ export const SidebarStyled = styled.div`
     align-items: center;
     flex-direction: column;
     height: calc(100vh - 60px);
-    padding: 20px 10px;
     .main_top {
       width: 100%;
+      padding-top: 20px;
     }
     .main_bottom {
       width: 100%;

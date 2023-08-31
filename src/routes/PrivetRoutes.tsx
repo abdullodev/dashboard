@@ -5,7 +5,7 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
-import { Loader, Sidebar } from "components";
+import { Head, Loader, Sidebar } from "components";
 import { SiderbarStyle } from "./PrivetRoutes.style";
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -32,15 +32,16 @@ const PrivetRoutes = () => {
           <div className="demo-logo-vertical" />
           <Sidebar />
         </SiderbarStyle>
-        <Layout style={{}}>
-          <Header style={{ padding: 0, background: colorBgContainer }} />
+        <Layout style={{ background: "#F6F7F9", padding: "10px" }}>
+          <Header style={{ padding: 0, backgroundColor: "inherit" }}>
+            <Head />
+          </Header>
           <Content
             style={{ margin: "24px 16px 0", minHeight: "calc(100vh - 60px)" }}
           >
             <div
               style={{
                 padding: 24,
-                background: colorBgContainer,
               }}
             >
               content
