@@ -3,6 +3,8 @@ import Document from "components/assets/Document";
 import Profile from "components/assets/Profile";
 import Profile2 from "components/assets/Profile2";
 import Presention from "components/assets/Presention";
+import Logout from "components/assets/Logout";
+import Settings from "components/assets/Settings";
 
 interface ISidebarItems {
   icon: any;
@@ -33,11 +35,11 @@ export const ITEMS: ISidebarItems[] = [
 
 export const BOTTOMITEMS: ISidebarItems[] = [
   {
-    icon: Home,
-    label: "Document",
+    icon: Settings,
+    label: "Sozlamalar",
   },
   {
-    icon: Profile2,
-    label: "Employees",
+    icon: Logout,
+    label: "Chiqish",
   },
 ];

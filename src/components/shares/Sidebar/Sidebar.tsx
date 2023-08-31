@@ -21,7 +21,6 @@ const Sidebar = () => {
           <div className="sidebar_title">Main menu</div>
 
           <Menu
-            // theme="dark"
             mode="inline"
             defaultSelectedKeys={["4 "]}
             items={ITEMS.map((item, index) => ({
@@ -32,9 +31,8 @@ const Sidebar = () => {
           />
         </div>
         <div className="main_bottom">
-          <div className="sidebar_title">Main menu</div>
+          <div className="sidebar_title">Preferences</div>
           <Menu
-            // theme="dark"
             mode="inline"
             defaultSelectedKeys={["4 "]}
             items={BOTTOMITEMS.map((item, index) => ({
