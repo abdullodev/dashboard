@@ -9,6 +9,7 @@ export const HeaderStyle = styled.div`
     align-items: center;
     padding: 0 20px;
     background-color: #ffffff;
+    box-shadow: 0px 6px 24px 0px #d0d5dd33;
 
     .breadcramb_box {
       height: 100%;
@@ -17,7 +18,7 @@ export const HeaderStyle = styled.div`
       align-items: center;
       ol {
         li {
-          height: 40px;
+          line-height: 20px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -57,6 +58,7 @@ export const HeaderStyle = styled.div`
           transition: all 0.3s ease;
           font-size: 16px;
           font-weight: 500;
+          line-height: 16px;
         }
         .img {
           border-radius: 6px;

@@ -1,12 +1,9 @@
-import React from "react";
-import { HeaderStyle } from "./Header.style";
-import { Input, Space } from "antd";
-import { HomeOutlined, UserOutlined } from "@ant-design/icons";
-import USER from "../../assets/Rectangle 338.png";
+import { Breadcrumb, Input, Space } from "antd";
+import BreadHome from "components/assets/BreadHome";
 import Notif from "components/assets/Notif";
 import Search from "components/assets/Search";
-import { Breadcrumb } from "antd";
-import BreadHome from "components/assets/BreadHome";
+import USER from "../../assets/Rectangle 338.png";
+import { HeaderStyle } from "./Header.style";
 
 const Header = () => {
   return (

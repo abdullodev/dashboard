@@ -1,14 +1,23 @@
-import React, { Suspense } from "react";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
-import { Layout, Menu, theme } from "antd";
+import { Layout, theme } from "antd";
 import { Head, Loader, Sidebar } from "components";
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
 import { SiderbarStyle } from "./PrivetRoutes.style";
+import { ROUTE_LISTS } from "./Routes.constants";
 
 const { Header, Footer, Sider, Content } = Layout;
+
+const ROUTES = () => {
+  return (
+    <Routes>
+      {ROUTE_LISTS.map((route) => (
+        <React.Fragment key={route.id}>
+          <Route {...route} />
+        </React.Fragment>
+      ))}
+    </Routes>
+  );
+};
 
 const PrivetRoutes = () => {
   const {
@@ -23,10 +32,10 @@ const PrivetRoutes = () => {
           breakpoint="lg"
           collapsedWidth="0"
           onBreakpoint={(broken) => {
-            console.log(broken);
+            // console.log(broken);
           }}
           onCollapse={(collapsed, type) => {
-            console.log(collapsed, type);
+            // console.log(collapsed, type);
           }}
         >
           <div className="demo-logo-vertical" />
@@ -36,15 +45,17 @@ const PrivetRoutes = () => {
           <Header style={{ padding: 0, backgroundColor: "inherit" }}>
             <Head />
           </Header>
-          <Content
-            style={{ margin: "24px 16px 0", minHeight: "calc(100vh - 60px)" }}
-          >
+          <Content style={{ minHeight: "calc(100vh - 60px)" }}>
             <div
               style={{
-                padding: 24,
+                position: "relative",
+                padding: "10px 0",
+                height: "100%",
               }}
             >
-              content
+              <Suspense fallback={<Loader />}>
+                <ROUTES />
+              </Suspense>
             </div>
           </Content>
         </Layout>

@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/logoo.png";
 import { BOTTOMITEMS, ITEMS } from "./Sidebar.constants";
 import { SidebarStyled } from "./Sidebar.style";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
 
 import { Menu } from "antd";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const [nav, setNav] = useState<string>(
+    localStorage.getItem("item") || "/document"
+  );
+  const navigate = useNavigate();
+  const location = useLocation();
+  const NavigateFn = (e: any) => {
+    setNav(e.key);
+    localStorage.setItem("item", e.key);
+    if (location !== e.key) {
+      navigate(e.key);
+    }
+  };
+
   return (
     <SidebarStyled>
       <header>
@@ -22,9 +31,10 @@ const Sidebar = () => {
 
           <Menu
             mode="inline"
-            defaultSelectedKeys={["4 "]}
+            onClick={NavigateFn}
+            defaultSelectedKeys={[nav]}
             items={ITEMS.map((item, index) => ({
-              key: String(index + 1),
+              key: item.path,
               icon: React.createElement(item.icon),
               label: item.label,
             }))}
@@ -34,9 +44,8 @@ const Sidebar = () => {
           <div className="sidebar_title">Preferences</div>
           <Menu
             mode="inline"
-            defaultSelectedKeys={["4 "]}
             items={BOTTOMITEMS.map((item, index) => ({
-              key: String(index + 1),
+              key: item.path,
               icon: React.createElement(item.icon),
               label: item.label,
             }))}
