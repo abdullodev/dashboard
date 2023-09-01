@@ -1,13 +1,18 @@
 import { Button, Input } from "antd";
 import { RegisterStyled } from "./Register.style";
+import { useNavigate } from "react-router-dom";
 
 interface IRegister {
   setAuth: (auth: "login" | "register") => void;
 }
 
 const Register = ({ setAuth }: IRegister) => {
+  const navigate = useNavigate();
+
   const submit = () => {
     localStorage.setItem("token", "token");
+    navigate("/document");
+    console.log("clicked");
   };
   return (
     <RegisterStyled onSubmit={submit}>
@@ -33,7 +38,7 @@ const Register = ({ setAuth }: IRegister) => {
           <label htmlFor="parol">Password</label>
           <Input.Password placeholder="Password" className="password-input" />
         </p>
-        <Button type="primary" className="login-btn">
+        <Button htmlType="submit" type="primary" className="login-btn">
           Kirish
         </Button>
 

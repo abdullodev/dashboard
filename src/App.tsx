@@ -1,5 +1,6 @@
+import Auth from "pages/auth/container/Auth";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import PrivetRoutes from "routes/PrivetRoutes";
 
 function App() {
@@ -7,15 +8,18 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!token) {
-      navigate("/auth");
+    if (token) {
+      // navigate("/");
     }
   }, [token]);
 
   return (
-    <div className="App">
-      <PrivetRoutes />
-    </div>
+    <>
+      <Routes>
+        <Route path="*" element={<PrivetRoutes />} />
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
+    </>
   );
 }
 

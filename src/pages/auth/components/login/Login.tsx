@@ -1,12 +1,15 @@
 import { Button, Input } from "antd";
 import { LoginStyled } from "./Login.style";
+import { useNavigate } from "react-router-dom";
 
 interface ILogin {
   setAuth: (auth: "login" | "register") => void;
 }
 const Login = ({ setAuth }: ILogin) => {
+  const navigate = useNavigate();
   const submit = () => {
     localStorage.setItem("token", "token");
+    navigate("/document");
   };
   return (
     <LoginStyled onSubmit={submit}>
@@ -20,7 +23,7 @@ const Login = ({ setAuth }: ILogin) => {
           <label htmlFor="parol">Password</label>
           <Input.Password placeholder="Password" className="password-input" />
         </p>
-        <Button type="primary" className="login-btn">
+        <Button htmlType="submit" type="primary" className="login-btn">
           Kirish
         </Button>
         <footer>
