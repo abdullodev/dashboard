@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
 
 export const SidebarStyled = styled.div`
-  padding: 10px;
+  padding: 20px 10px;
+  height: 100%;
 
   header {
     display: flex;
@@ -21,7 +22,8 @@ export const SidebarStyled = styled.div`
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: calc(100vh - 60px);
+    width: 100%;
+    height: calc(100% - 60px);
     .main_top {
       width: 100%;
       padding-top: 20px;
@@ -30,18 +32,21 @@ export const SidebarStyled = styled.div`
       width: 100%;
     }
 
-    ul li {
-      gap: 15px;
-      font-size: 16px;
-      font-size: 400;
-      border: 0 !important;
-      &:hover {
-        background-color: #f7f5fd !important;
-        color: #4623e9 !important;
-      }
-      &.ant-menu-item-selected {
-        background-color: #f7f5fd !important;
-        color: #4623e9 !important;
+    ul {
+      border: none !important;
+      li {
+        gap: 15px;
+        font-size: 16px;
+        font-size: 400;
+        border: 0 !important;
+        &:hover {
+          background-color: #f7f5fd !important;
+          color: #4623e9 !important;
+        }
+        &.ant-menu-item-selected {
+          background-color: #f7f5fd !important;
+          color: #4623e9 !important;
+        }
       }
     }
 

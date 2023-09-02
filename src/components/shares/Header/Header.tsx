@@ -14,11 +14,10 @@ const Header = () => {
             separator=">"
             items={[
               {
-                href: "/",
                 title: <BreadHome />,
               },
               {
-                href: "/home",
+                href: "/document",
                 title: (
                   <>
                     <span>Document</span>

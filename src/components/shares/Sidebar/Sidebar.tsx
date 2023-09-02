@@ -14,8 +14,12 @@ const Sidebar = () => {
   const location = useLocation();
   const NavigateFn = (e: any) => {
     setNav(e.key);
+    console.log(e.key);
     localStorage.setItem("item", e.key);
-    if (location !== e.key) {
+    if (e.key === "/logout") {
+      navigate("/auth");
+      localStorage.clear();
+    } else if (location !== e.key) {
       navigate(e.key);
     }
   };
@@ -32,7 +36,8 @@ const Sidebar = () => {
           <Menu
             mode="inline"
             onClick={NavigateFn}
-            defaultSelectedKeys={[nav]}
+            // defaultSelectedKeys={[nav]}
+            selectedKeys={[nav]}
             items={ITEMS.map((item, index) => ({
               key: item.path,
               icon: React.createElement(item.icon),
@@ -44,6 +49,9 @@ const Sidebar = () => {
           <div className="sidebar_title">Preferences</div>
           <Menu
             mode="inline"
+            onClick={NavigateFn}
+            // defaultSelectedKeys={[nav]}
+            selectedKeys={[nav]}
             items={BOTTOMITEMS.map((item, index) => ({
               key: item.path,
               icon: React.createElement(item.icon),

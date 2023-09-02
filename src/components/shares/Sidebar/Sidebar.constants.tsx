@@ -47,7 +47,7 @@ export const BOTTOMITEMS: ISidebarItems[] = [
   },
   {
     icon: Logout,
-    path: "/sign-in",
+    path: "/logout",
     label: "Chiqish",
   },
 ];

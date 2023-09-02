@@ -33,7 +33,7 @@ const PrivetRoutes = () => {
       navigate("/auth");
     }
   }, [token]);
-  
+
   return (
     <Suspense fallback={<Loader />}>
       <Layout style={{ minHeight: "100vh" }}>
@@ -51,11 +51,11 @@ const PrivetRoutes = () => {
           <div className="demo-logo-vertical" />
           <Sidebar />
         </SiderbarStyle>
-        <Layout style={{ background: "#F6F7F9", padding: "10px" }}>
+        <Layout style={{ background: "#F6F7F9", padding: "20px" }}>
           <Header style={{ padding: 0, backgroundColor: "inherit" }}>
             <Head />
           </Header>
-          <Content style={{ minHeight: "calc(100vh - 60px)" }}>
+          <Content style={{ minHeight: "calc(100vh - 70px)" }}>
             <div
               style={{
                 position: "relative",
