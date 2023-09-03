@@ -51,16 +51,35 @@ const PrivetRoutes = () => {
           <div className="demo-logo-vertical" />
           <Sidebar />
         </SiderbarStyle>
-        <Layout style={{ background: "#F6F7F9", padding: "20px" }}>
-          <Header style={{ padding: 0, backgroundColor: "inherit" }}>
+        <Layout
+          style={{
+            background: "#F6F7F9",
+            height: "100vh",
+            padding: "20px 0",
+            boxSizing: "border-box",
+            overflow: "hidden",
+          }}
+        >
+          <Header
+            style={{
+              backgroundColor: "inherit",
+              width: "100%",
+              padding: "0 20px",
+            }}
+          >
             <Head />
           </Header>
-          <Content style={{ minHeight: "calc(100vh - 70px)" }}>
+          <Content
+            style={{
+              boxSizing: "border-box",
+            }}
+          >
             <div
               style={{
-                position: "relative",
-                padding: "10px 0",
-                height: "100%",
+                height: "calc(100vh - 64px)",
+                boxSizing: "border-box",
+                padding: "10px 5px 20px 20px",
+                overflow: "auto",
               }}
             >
               <Suspense fallback={<Loader />}>

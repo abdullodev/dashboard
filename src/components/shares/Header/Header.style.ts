@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 
 export const HeaderStyle = styled.div`
   .header_box {
+    width: 100% !important;
     height: 56px;
     border-radius: 8px;
     display: flex;
