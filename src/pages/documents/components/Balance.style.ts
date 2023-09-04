@@ -46,16 +46,14 @@ export const BalanceStyle = styled.div`
     }
   }
   .btns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 25px;
     justify-content: space-between;
     align-items: center;
-    @media screen and (max-width: 720px) {
-      grid-template-columns: 1fr;
-    }
+    flex-wrap: wrap;
 
     button {
+      width: 100%;
       height: 55px;
       background-color: #ffffff;
       border-radius: 10px;

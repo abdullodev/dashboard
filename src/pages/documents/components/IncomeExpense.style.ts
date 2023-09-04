@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const IncomeExpenseStyle = styled.div`
   width: 100%;
   border-radius: 10px;
-  height: 160px;
+  min-height: 160px;
   padding: 22px 16px;
   background-color: #ffffff;
   box-shadow: 0px 6px 24px 0px #d0d5dd33;

@@ -77,7 +77,8 @@ const data = [
 ];
 
 const Statistics = () => {
-  const [year, setYear] = useState<number>(2024);
+  const defaultYear = new Date().getFullYear();
+  const [year, setYear] = useState<number>(defaultYear);
   return (
     <StatisticsStyle>
       <div className="head">
@@ -90,7 +91,7 @@ const Statistics = () => {
           <span>{year}</span>
           <RightOutlined
             className="icon_date"
-            onClick={() => setYear((prev) => prev + 1)}
+            onClick={() => setYear((prev) => Math.min(prev + 1, defaultYear))}
           />
         </div>
       </div>
