@@ -49,7 +49,6 @@ export const StatisticsStyle = styled.div`
       display: none;
     }
     .recharts-bar-rectangle {
-      background-color: aqua;
       path {
         -moz-outline-radius: 12px;
       }

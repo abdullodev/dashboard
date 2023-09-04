@@ -1,10 +1,7 @@
-import React from "react";
-import { CategoryStyle } from "./Category.style";
-import { Badge, Button } from "antd";
+import { Badge } from "antd";
+import { Cell, Pie, PieChart } from "recharts";
 import ThreeDot from "../assets/ThreeDot";
-import MoneyRecive from "../assets/MoneyRecive";
-import MoneySend from "../assets/MoneySend";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
+import { CategoryStyle } from "./Category.style";
 
 const data = [
   { name: "Group A", value: 500 },
@@ -14,6 +11,7 @@ const data = [
   { name: "Group E", value: 250 },
   { name: "Group F", value: 200 },
 ];
+
 const COLORS = [
   {
     color: "#EB7CA6",
@@ -51,6 +49,7 @@ const Category = () => {
   const onPieEnter = () => {
     console.log("hoverd");
   };
+
   return (
     <CategoryStyle>
       <div className="head">
