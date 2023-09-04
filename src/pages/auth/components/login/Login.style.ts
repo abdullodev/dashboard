@@ -19,7 +19,7 @@ export const LoginStyled = styled.form`
     display: flex;
     flex-direction: column;
     gap: 15px;
-    p {
+    /* p {
       label {
         display: inline-block;
         padding: 7px 0;
@@ -48,7 +48,7 @@ export const LoginStyled = styled.form`
         font-weight: 600;
         color: #353740;
       }
-    }
+    } */
     .login-btn {
       height: 44px;
       font-size: 16px;

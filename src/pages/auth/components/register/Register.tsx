@@ -1,6 +1,7 @@
 import { Button, Input } from "antd";
 import { RegisterStyled } from "./Register.style";
 import { useNavigate } from "react-router-dom";
+import { CustomInput } from "components";
 
 interface IRegister {
   setAuth: (auth: "login" | "register") => void;
@@ -18,26 +19,41 @@ const Register = ({ setAuth }: IRegister) => {
     <RegisterStyled onSubmit={submit}>
       <h2>Tizimga kirish</h2>
       <div className="register">
-        <p>
-          <label htmlFor="ivv">IVV</label>
-          <Input placeholder="IVV" id="ivv" />
-        </p>
-        <p>
-          <label htmlFor="viib">VIIB Boshqarmasi</label>
-          <Input placeholder="VIIB Boshqarmasi" id="viib" />
-        </p>
+        <CustomInput name="iiv" props={{ placeholder: "IIV" }} label="IIV" />
+
+        <CustomInput
+          name="viib"
+          props={{ placeholder: "VIIB Boshqarmasi" }}
+          label="VIIB Boshqarmasi"
+          rules={{ message: "Must be fill the field", value: true }}
+        />
+
         <p>
           <label htmlFor="tuman-bo'lim">Tuman IIBo'lim</label>
           <Input placeholder="Tuman IIBo'lim" id="tuman-bo'lim" />
         </p>
+        <CustomInput
+          name="iib"
+          props={{ placeholder: "Tuman IIBo'lim" }}
+          label="Tuman IIBo'lim"
+        />
         <p>
           <label htmlFor="login">Login</label>
           <Input placeholder="Login" id="login" />
         </p>
-        <p>
-          <label htmlFor="parol">Password</label>
-          <Input.Password placeholder="Password" className="password-input" />
-        </p>
+        <CustomInput
+          name="login"
+          props={{ placeholder: "Login" }}
+          label="Login"
+          rules={{ message: "Must be 6 characters", value: true }}
+        />
+        <CustomInput
+          name="password"
+          props={{ placeholder: "Password" }}
+          label="Password"
+          rules={{ message: "Must be 6 characters", value: true }}
+        />
+
         <Button htmlType="submit" type="primary" className="login-btn">
           Kirish
         </Button>

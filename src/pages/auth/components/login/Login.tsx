@@ -1,6 +1,7 @@
 import { Button, Input } from "antd";
 import { LoginStyled } from "./Login.style";
 import { useNavigate } from "react-router-dom";
+import { CustomInput, CustomPassword } from "components";
 
 interface ILogin {
   setAuth: (auth: "login" | "register") => void;
@@ -15,14 +16,19 @@ const Login = ({ setAuth }: ILogin) => {
     <LoginStyled onSubmit={submit}>
       <h2>Tizimga kirish</h2>
       <div className="login">
-        <p>
-          <label htmlFor="login">Login</label>
-          <Input placeholder="Login" id="login" />
-        </p>
-        <p>
-          <label htmlFor="parol">Password</label>
-          <Input.Password placeholder="Password" className="password-input" />
-        </p>
+        <CustomInput
+          name="login"
+          label={"Login"}
+          props={{ placeholder: "Login" }}
+          rules={{ message: "Must be fill th field", value: true }}
+        />
+        <CustomPassword
+          name="password"
+          label="Password"
+          rules={{ message: "Length must be 6 characters", value: true }}
+          props={{ placeholder: "Password" }}
+          icon={<></>}
+        />
         <Button htmlType="submit" type="primary" className="login-btn">
           Kirish
         </Button>
