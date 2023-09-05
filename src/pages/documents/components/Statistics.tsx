@@ -12,6 +12,7 @@ import {
 import { StatisticsStyle } from "./Statistics.style";
 import { useState } from "react";
 import { Button, Typography } from "antd";
+import { YearFilter } from "components";
 
 const data = [
   {
@@ -78,25 +79,13 @@ const data = [
 ];
 
 const Statistics = () => {
-  const defaultYear = new Date().getFullYear();
-  const [year, setYear] = useState<number>(defaultYear);
   return (
     <StatisticsStyle>
       <div className="head">
         <Typography style={{ fontSize: "16px" }}>
           Spending Statistics
         </Typography>
-        <div className="years">
-          <LeftOutlined
-            className="icon_date"
-            onClick={() => setYear((prev) => prev - 1)}
-          />
-          <span>{year}</span>
-          <RightOutlined
-            className="icon_date"
-            onClick={() => setYear((prev) => Math.min(prev + 1, defaultYear))}
-          />
-        </div>
+        <YearFilter />
       </div>
       <div className="chart">
         <ResponsiveContainer width="100%" height="100%">

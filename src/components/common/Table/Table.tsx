@@ -1,7 +1,6 @@
-import React, { useState } from "react";
 import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import type { TableRowSelection } from "antd/es/table/interface";
+import React from "react";
 import { TableStyle } from "./Table.style";
 
 interface DataType {
@@ -15,6 +14,7 @@ const columns: ColumnsType<DataType> = [
   {
     title: "Name",
     dataIndex: "name",
+    render: (text: string) => <a>{text}</a>,
   },
   {
     title: "Age",
@@ -26,79 +26,39 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
-interface ITable {
-  pagination?: boolean;
-  elements?: number;
-}
-const CustomTable: React.FC<ITable> = ({
-  pagination = false,
-  elements = 3,
-}) => {
-  const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+const data: DataType[] = [
+  {
+    key: "1",
+    name: "John Brown",
+    age: 32,
+    address: "New York No. 1 Lake Park",
+  },
+  {
+    key: "2",
+    name: "Jim Green",
+    age: 42,
+    address: "London No. 1 Lake Park",
+  },
+  {
+    key: "3",
+    name: "Joe Black",
+    age: 32,
+    address: "Sydney No. 1 Lake Park",
+  },
+  {
+    key: "4",
+    name: "Disabled User",
+    age: 99,
+    address: "Sydney No. 1 Lake Park",
+  },
+];
 
-  const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
-    console.log("selectedRowKeys changed: ", newSelectedRowKeys);
-    setSelectedRowKeys(newSelectedRowKeys);
-  };
-
-  const rowSelection: TableRowSelection<DataType> = {
-    selectedRowKeys,
-    onChange: onSelectChange,
-    selections: [
-      Table.SELECTION_ALL,
-      Table.SELECTION_INVERT,
-      Table.SELECTION_NONE,
-      {
-        key: "odd",
-        text: "Select Odd Row",
-        onSelect: (changeableRowKeys) => {
-          let newSelectedRowKeys = [];
-          newSelectedRowKeys = changeableRowKeys.filter((_, index) => {
-            if (index % 2 !== 0) {
-              return false;
-            }
-            return true;
-          });
-          setSelectedRowKeys(newSelectedRowKeys);
-        },
-      },
-      {
-        key: "even",
-        text: "Select Even Row",
-        onSelect: (changeableRowKeys) => {
-          let newSelectedRowKeys = [];
-          newSelectedRowKeys = changeableRowKeys.filter((_, index) => {
-            if (index % 2 !== 0) {
-              return true;
-            }
-            return false;
-          });
-          setSelectedRowKeys(newSelectedRowKeys);
-        },
-      },
-    ],
-  };
-
-  const data: DataType[] = [];
-  for (let i = 0; i < elements; i++) {
-    data.push({
-      key: i,
-      name: `Edward King ${i}`,
-      age: 32,
-      address: `London, Park Lane no. ${i}`,
-    });
-  }
-
+const TableHome: React.FC = () => {
   return (
     <TableStyle>
-      <Table
-        rowSelection={rowSelection}
-        columns={columns}
-        dataSource={data}
-        pagination={false}
-      />
+      <Table columns={columns} dataSource={data} pagination={false} />
     </TableStyle>
   );
 };
 
-export default CustomTable;
+export default TableHome;

@@ -1,4 +1,4 @@
-import { CustomTable } from "components";
+import { CustomTable, TableHome } from "components";
 import { TransactionStyle } from "./Transaction.style";
 import { DatePicker } from "antd";
 import MockDate from "mockdate";
@@ -13,7 +13,7 @@ const Transaction = () => {
           <DatePicker />
         </div>
       </div>
-      <CustomTable elements={3} />
+      <TableHome />
     </TransactionStyle>
   );
 };

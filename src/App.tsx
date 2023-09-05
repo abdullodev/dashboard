@@ -21,13 +21,13 @@ function App() {
       theme={{
         // algorithm: darkAlgorithm,
         token: {
-          // Seed Token
           // colorPrimary: "#ffffff",
           // borderRadius: 20,
           // colorBgBase: "#12aaaf",
           // boxShadow: "0 0 10px #eeeeee",
           // colorBgContainerDisabled: "#ffffff",
-          // // Alias Token
+          // colorPrimaryHover: "red",
+          // colorBgMask: "green",
           // colorBgContainer: "#fffffff",
           // colorBgSpotlight: "red",
         },

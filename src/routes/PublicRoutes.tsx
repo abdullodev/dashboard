@@ -2,7 +2,7 @@ import React, { Suspense, useEffect } from "react";
 import { Layout, theme } from "antd";
 import { Head, Loader, Sidebar } from "components";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { SiderbarStyle } from "./PublicRoutes.constants";
+import { SiderbarStyle } from "./PublicRoutes.style";
 import { ROUTE_LISTS } from "./Routes.constants";
 
 const { Header, Footer, Sider, Content } = Layout;

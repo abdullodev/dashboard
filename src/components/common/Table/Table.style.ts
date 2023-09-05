@@ -1,7 +1,10 @@
 import { styled } from "styled-components";
 
 export const TableStyle = styled.div`
-  .ant-table-wrapper {
-    height: 100%;
+  /* height: 100%; */
+
+  tbody {
+    height: calc(100% - 55px) !important;
+    overflow: auto;
   }
 `;
