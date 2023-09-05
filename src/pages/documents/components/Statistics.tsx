@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import { StatisticsStyle } from "./Statistics.style";
 import { useState } from "react";
+import { Button, Typography } from "antd";
 
 const data = [
   {
@@ -82,7 +83,9 @@ const Statistics = () => {
   return (
     <StatisticsStyle>
       <div className="head">
-        <div className="title">Spending Statistics</div>
+        <Typography style={{ fontSize: "16px" }}>
+          Spending Statistics
+        </Typography>
         <div className="years">
           <LeftOutlined
             className="icon_date"

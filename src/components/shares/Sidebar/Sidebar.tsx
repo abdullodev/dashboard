@@ -3,7 +3,7 @@ import Logo from "../../assets/logoo.png";
 import { BOTTOMITEMS, ITEMS } from "./Sidebar.constants";
 import { SidebarStyled } from "./Sidebar.style";
 
-import { Menu } from "antd";
+import { Menu, Typography } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
@@ -27,7 +27,8 @@ const Sidebar = () => {
   return (
     <SidebarStyled>
       <header>
-        <img src={Logo} alt="logo" /> <h2>Dashbord</h2>
+        <img src={Logo} alt="logo" />
+        <Typography style={{ fontSize: "24px" }}>Dashbord</Typography>
       </header>
       <main>
         <div className="main_top">

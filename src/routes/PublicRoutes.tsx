@@ -2,7 +2,7 @@ import React, { Suspense, useEffect } from "react";
 import { Layout, theme } from "antd";
 import { Head, Loader, Sidebar } from "components";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { SiderbarStyle } from "./PrivetRoutes.style";
+import { SiderbarStyle } from "./PublicRoutes.constants";
 import { ROUTE_LISTS } from "./Routes.constants";
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -39,6 +39,7 @@ const PrivetRoutes = () => {
       <Layout style={{ minHeight: "100vh" }}>
         <SiderbarStyle
           width={280}
+          theme="light"
           breakpoint="lg"
           collapsedWidth="0"
           onBreakpoint={(broken) => {
@@ -53,7 +54,6 @@ const PrivetRoutes = () => {
         </SiderbarStyle>
         <Layout
           style={{
-            background: "#F6F7F9",
             height: "100vh",
             padding: "20px 0",
             boxSizing: "border-box",
