@@ -2,6 +2,7 @@ import React, { lazy } from "react";
 
 const Documents = lazy(() => import("pages/documents/container"));
 const Employee = lazy(() => import("pages/employee/container"));
+const Tasks = lazy(() => import("pages/tasks/container"));
 
 interface IRoutes {
   id: string;
@@ -19,5 +20,10 @@ export const ROUTE_LISTS: IRoutes[] = [
     id: "employee",
     path: "/employee",
     element: <Employee />,
+  },
+  {
+    id: "tasks",
+    path: "/tasks",
+    element: <Tasks />,
   },
 ];

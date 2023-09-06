@@ -2,6 +2,7 @@ import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import React, { useState } from "react";
 import CustomTableHeader from "./components/CustomTableHeader";
+import { CustomTableStyle } from "./CustomTable.style";
 
 interface DataType {
   key: React.Key;
@@ -34,8 +35,11 @@ for (let i = 0; i < 46; i++) {
     address: `London, Park Lane no. ${i}`,
   });
 }
-
-const CustomTable = () => {
+interface ICustomTable {
+  setFilter?: (filter: boolean) => void;
+  filter?: boolean;
+}
+const CustomTable: React.FC<ICustomTable> = ({ setFilter, filter }) => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
@@ -49,10 +53,10 @@ const CustomTable = () => {
   };
 
   return (
-    <div>
-      <CustomTableHeader />
+    <CustomTableStyle>
+      <CustomTableHeader setFilter={setFilter} filter={filter} />
       <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
-    </div>
+    </CustomTableStyle>
   );
 };
 

@@ -7,6 +7,8 @@ import YearFilter from "./common/CustomYearFilter/YearFilter";
 import CustomTable from "./common/CustomTable/CustomTable";
 import TableHome from "./common/Table/Table";
 import CustomTabs from "./common/CustomTabs/CustomTabs";
+import CustomSearch from "./common/CustomSearch/CustomSearch";
+import CustomSelect from "./common/CustomSelect/CustomSelect";
 
 export {
   Loader,
@@ -17,5 +19,7 @@ export {
   YearFilter,
   CustomTable,
   TableHome,
+  CustomSearch,
   CustomTabs,
+  CustomSelect,
 };
