@@ -2,7 +2,7 @@ import React, { Suspense, useEffect } from "react";
 import { Layout, theme } from "antd";
 import { Head, Loader, Sidebar } from "components";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { SiderbarStyle } from "./PublicRoutes.style";
+import { ContentStyle, SiderbarStyle } from "./PublicRoutes.style";
 import { ROUTE_LISTS } from "./Routes.constants";
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -74,19 +74,11 @@ const PrivetRoutes = () => {
               boxSizing: "border-box",
             }}
           >
-            <div
-              style={{
-                height: "calc(100vh - 64px)",
-                boxSizing: "border-box",
-                padding: "10px 5px 20px 20px",
-                overflow: "auto",
-                position: "relative",
-              }}
-            >
+            <ContentStyle>
               <Suspense fallback={<Loader />}>
                 <ROUTES />
               </Suspense>
-            </div>
+            </ContentStyle>
           </Content>
         </Layout>
       </Layout>

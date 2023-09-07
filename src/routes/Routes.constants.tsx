@@ -3,6 +3,7 @@ import React, { lazy } from "react";
 const Documents = lazy(() => import("pages/documents/container"));
 const Employee = lazy(() => import("pages/employee/container"));
 const Tasks = lazy(() => import("pages/tasks/container"));
+const User = lazy(() => import("pages/user/container"));
 
 interface IRoutes {
   id: string;
@@ -25,5 +26,10 @@ export const ROUTE_LISTS: IRoutes[] = [
     id: "tasks",
     path: "/tasks",
     element: <Tasks />,
+  },
+  {
+    id: "user-info",
+    path: "/user-info",
+    element: <User />,
   },
 ];

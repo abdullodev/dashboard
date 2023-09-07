@@ -60,6 +60,10 @@ export const HeaderStyle = styled.div`
           font-size: 16px;
           font-weight: 500;
           line-height: 16px;
+
+          @media screen and (max-width: 540px) {
+            display: none;
+          }
         }
         .img {
           border-radius: 6px;

@@ -19,3 +19,20 @@ export const SiderbarStyle = styled(Sider)`
     align-items: center;
   }
 `;
+
+export const ContentStyle = styled.div`
+  height: calc(100vh - 80px);
+  box-sizing: border-box;
+  padding: 10px 20px 20px 20px;
+  overflow: auto;
+  position: relative;
+
+  /* &::-webkit-scrollbar {
+    display: none;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      display: block;
+    }
+  } */
+`;

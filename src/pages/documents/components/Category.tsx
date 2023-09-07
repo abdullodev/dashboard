@@ -58,41 +58,43 @@ const Category = () => {
           <ThreeDot />
         </div>
       </div>
-      <div className="pie_chart">
-        <PieChart width={300} height={300} onMouseEnter={onPieEnter}>
-          <Pie
-            data={data}
-            innerRadius={90}
-            outerRadius={110}
-            fill="#8884d8"
-            paddingAngle={5}
-            dataKey="value"
-            radius={12}
-            cornerRadius={5}
-          >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length].color}
-              />
-            ))}
-          </Pie>
-        </PieChart>
-        <div className="center_title">
-          <p>Overall Spending</p>
-          <h2>$19,760,00</h2>
-        </div>
-      </div>
-      <div className="info_content">
-        {COLORS.map((color) => (
-          <div className="info" key={color.color}>
-            <p>
-              <Badge key={color.color} color={color.color} />
-              <span>{color.text}</span>
-            </p>
-            <h3>{color.price}</h3>
+      <div className="picard">
+        <div className="pie_chart">
+          <PieChart width={300} height={300} onMouseEnter={onPieEnter}>
+            <Pie
+              data={data}
+              innerRadius={90}
+              outerRadius={110}
+              fill="#8884d8"
+              paddingAngle={5}
+              dataKey="value"
+              radius={12}
+              cornerRadius={5}
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length].color}
+                />
+              ))}
+            </Pie>
+          </PieChart>
+          <div className="center_title">
+            <p>Overall Spending</p>
+            <h2>$19,760,00</h2>
           </div>
-        ))}
+        </div>
+        <div className="info_content">
+          {COLORS.map((color) => (
+            <div className="info" key={color.color}>
+              <p>
+                <Badge key={color.color} color={color.color} />
+                <span>{color.text}</span>
+              </p>
+              <h3>{color.price}</h3>
+            </div>
+          ))}
+        </div>
       </div>
     </CategoryStyle>
   );

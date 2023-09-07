@@ -19,3 +19,15 @@
   font-family: "Tilt Prism", cursive;
   font-family: "Wix Madefor Display", sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #aeaeae;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #4623e9;
+  border-radius: 12px;
+}

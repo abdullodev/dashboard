@@ -12,11 +12,19 @@ const Tasks = () => {
       <TasksHeader setStudent={setStudent} student={student} />
       <CustomTabs />
       <Row gutter={[16, 16]}>
-        <Col xs={24} md={student ? 18 : 24} order={2}>
+        <Col
+          xs={{ span: 24, order: 2 }}
+          sm={{ span: 12, order: 1 }}
+          xl={{ span: student ? 18 : 24, order: 1 }}
+        >
           <TableHome />
         </Col>
         {student && (
-          <StudentStyle xs={24} md={6} order={1}>
+          <StudentStyle
+            xs={{ span: 24, order: 1 }}
+            sm={{ span: 12, order: 2 }}
+            xl={{ span: 6, order: 2 }}
+          >
             <Card>
               <Typography style={{ fontSize: "20px", fontWeight: "700" }}>
                 Active Students

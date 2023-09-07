@@ -68,4 +68,7 @@ export const IncomeExpenseStyle = styled.div`
     width: 5px !important;
     height: 100%;
   }
+  @media screen and (max-width: 540px) {
+    flex-direction: column;
+  }
 `;

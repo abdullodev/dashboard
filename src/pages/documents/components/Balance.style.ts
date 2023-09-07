@@ -75,5 +75,9 @@ export const BalanceStyle = styled.div`
         }
       }
     }
+
+    @media screen and (max-width: 440px) {
+      flex-direction: column;
+    }
   }
 `;

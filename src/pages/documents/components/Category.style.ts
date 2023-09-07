@@ -77,4 +77,15 @@ export const CategoryStyle = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 990px) {
+    .picard {
+      display: flex;
+    }
+  }
+  @media screen and (max-width: 660px) {
+    .picard {
+      flex-direction: column;
+    }
+  }
 `;

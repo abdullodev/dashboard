@@ -10,7 +10,12 @@ const Documents = () => {
   return (
     <DocumentStyle>
       <Row gutter={[16, 16]}>
-        <Col sm={12} xs={24} md={16}>
+        <Col
+          xs={{ span: 24, order: 2 }}
+          sm={{ span: 24, order: 2 }}
+          lg={{ span: 12, order: 1 }}
+          xl={{ span: 16, order: 1 }}
+        >
           <Space
             direction="vertical"
             style={{ width: "100%", height: "100%" }}
@@ -21,7 +26,12 @@ const Documents = () => {
             <IncomeExpense />
           </Space>
         </Col>
-        <Col sm={12} xs={24} md={8}>
+        <Col
+          xs={{ span: 24, order: 1 }}
+          sm={{ span: 24, order: 1 }}
+          lg={{ span: 12, order: 2 }}
+          xl={{ span: 8, order: 2 }}
+        >
           <Space
             direction="vertical"
             style={{ width: "100%", height: "100%" }}
