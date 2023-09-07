@@ -13,14 +13,14 @@ export const CustomPasswordStyle = styled.div`
   }
   input {
     font-size: 16px;
-    border: 1px solid rgba(102, 112, 133);
     color: #1c1e23;
   }
   .ant-input-password {
     height: 44px;
-    padding: 0;
-    padding: 0 15px;
     border: 1px solid rgba(102, 112, 133);
+    padding-right: 10px;
+    padding: 0 7px;
+    box-sizing: border-box;
 
     input {
       outline: none;

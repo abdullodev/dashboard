@@ -1,7 +1,7 @@
 import { Button, Input } from "antd";
 import { RegisterStyled } from "./Register.style";
 import { useNavigate } from "react-router-dom";
-import { CustomInput } from "components";
+import { CustomInput, CustomPassword } from "components";
 
 interface IRegister {
   setAuth: (auth: "login" | "register") => void;
@@ -28,26 +28,19 @@ const Register = ({ setAuth }: IRegister) => {
           rules={{ message: "Must be fill the field", value: true }}
         />
 
-        <p>
-          <label htmlFor="tuman-bo'lim">Tuman IIBo'lim</label>
-          <Input placeholder="Tuman IIBo'lim" id="tuman-bo'lim" />
-        </p>
         <CustomInput
           name="iib"
           props={{ placeholder: "Tuman IIBo'lim" }}
           label="Tuman IIBo'lim"
         />
-        <p>
-          <label htmlFor="login">Login</label>
-          <Input placeholder="Login" id="login" />
-        </p>
+
         <CustomInput
           name="login"
           props={{ placeholder: "Login" }}
           label="Login"
           rules={{ message: "Must be 6 characters", value: true }}
         />
-        <CustomInput
+        <CustomPassword
           name="password"
           props={{ placeholder: "Password" }}
           label="Password"
