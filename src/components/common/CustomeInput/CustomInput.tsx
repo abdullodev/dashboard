@@ -1,6 +1,7 @@
 import { Input } from "antd";
 import React from "react";
 import { CustomInputStyle } from "./CustomInput.style";
+import { CloseOutlined } from "@ant-design/icons";
 
 interface IInput {
   name: string;
@@ -14,7 +15,13 @@ const CustomInput: React.FC<IInput> = ({ name, label, props, rules }) => {
       <label htmlFor={name}>
         {label} {rules?.value && <span>*</span>}
       </label>
-      <Input {...props} id={name} prefix={""} />
+      <Input
+        {...props}
+        id={name}
+        allowClear={{
+          clearIcon: <CloseOutlined style={{ fontSize: "18px" }} />,
+        }}
+      />
     </CustomInputStyle>
   );
 };

@@ -1,4 +1,4 @@
-import { Space } from "antd";
+import { Col, Space } from "antd";
 import { styled } from "styled-components";
 
 export const TasksStyle = styled(Space)`
@@ -16,3 +16,4 @@ export const ActiveStudentStyle = styled(Space)`
   grid-template-columns: 0.5fr 1.5fr;
   gap: 16px;
 `;
+export const StudentStyle = styled(Col)``;

@@ -80,6 +80,7 @@ const PrivetRoutes = () => {
                 boxSizing: "border-box",
                 padding: "10px 5px 20px 20px",
                 overflow: "auto",
+                position: "relative",
               }}
             >
               <Suspense fallback={<Loader />}>

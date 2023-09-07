@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TasksHeader from "../components/TasksHeader";
-import { ActiveStudentStyle, TasksStyle } from "./TasksStyle";
+import { ActiveStudentStyle, StudentStyle, TasksStyle } from "./TasksStyle";
 import { CustomTabs, TableHome } from "components";
 import { Card, Col, Row, Typography } from "antd";
 import { ACTIVE_STUDENTS } from "./TaskContants";
@@ -12,11 +12,11 @@ const Tasks = () => {
       <TasksHeader setStudent={setStudent} student={student} />
       <CustomTabs />
       <Row gutter={[16, 16]}>
-        <Col xs={24} md={student ? 18 : 24}>
+        <Col xs={24} md={student ? 18 : 24} order={2}>
           <TableHome />
         </Col>
         {student && (
-          <Col xs={24} md={6}>
+          <StudentStyle xs={24} md={6} order={1}>
             <Card>
               <Typography style={{ fontSize: "20px", fontWeight: "700" }}>
                 Active Students
@@ -38,7 +38,7 @@ const Tasks = () => {
                 ))}
               </div>
             </Card>
-          </Col>
+          </StudentStyle>
         )}
       </Row>
     </TasksStyle>

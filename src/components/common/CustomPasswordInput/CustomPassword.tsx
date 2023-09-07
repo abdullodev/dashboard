@@ -1,6 +1,7 @@
 import { Input } from "antd";
 import React from "react";
 import { CustomPasswordStyle } from "./CustomPassword.style";
+import { CloseOutlined } from "@ant-design/icons";
 
 interface IPassword {
   name: string;
@@ -23,7 +24,14 @@ const CustomPassword: React.FC<IPassword> = ({
       <label htmlFor={name}>
         {label} {rules?.value && <span>*</span>}
       </label>
-      <Input.Password {...props} id={name} prefix={icon} />
+      <Input.Password
+        {...props}
+        id={name}
+        prefix={icon}
+        allowClear={{
+          clearIcon: <CloseOutlined style={{ fontSize: "18px" }} />,
+        }}
+      />
       {error && <p className="error">{rules?.message}</p>}
     </CustomPasswordStyle>
   );

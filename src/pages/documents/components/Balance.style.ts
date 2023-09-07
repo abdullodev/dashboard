@@ -46,11 +46,11 @@ export const BalanceStyle = styled.div`
     }
   }
   .btns {
+    width: 100%;
     display: flex;
     gap: 25px;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 
     button {
       width: 100%;
