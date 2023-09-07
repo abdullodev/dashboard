@@ -24,7 +24,9 @@ const IncomeExpense = () => {
         </div>
       </div>
 
-      <Divider type="vertical" />
+      <div className="diveder_box">
+        <Divider type="vertical" style={{ height: "100%" }} />
+      </div>
       <div className="box">
         <div className="box_head">
           <div className="title">Total Expence</div>

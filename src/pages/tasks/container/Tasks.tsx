@@ -14,7 +14,7 @@ const Tasks = () => {
       <Row gutter={[16, 16]}>
         <Col
           xs={{ span: 24, order: 2 }}
-          sm={{ span: 12, order: 1 }}
+          sm={{ span: student ? 12 : 24, order: 1 }}
           xl={{ span: student ? 18 : 24, order: 1 }}
         >
           <TableHome />

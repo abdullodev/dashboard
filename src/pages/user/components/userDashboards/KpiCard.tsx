@@ -4,7 +4,13 @@ import { KpiStyle } from "./UserDashboard.style";
 
 import ArrowUp from "../../../documents/assets/ArrowUp";
 
-const KpiCard = () => {
+interface IKpiCard {
+  value?: {
+    number: number;
+    valueType: string;
+  };
+}
+const KpiCard: React.FC<IKpiCard> = ({ value }) => {
   return (
     <KpiStyle>
       <Space style={{ width: "100%" }} direction="vertical">
@@ -17,7 +23,10 @@ const KpiCard = () => {
           </div>
         </div>
         <Typography.Title>
-          73 <span style={{ fontSize: "16px", color: "#90A3BF" }}>балл</span>
+          {value?.number}{" "}
+          <span style={{ fontSize: "16px", color: "#90A3BF" }}>
+            {value?.valueType}
+          </span>
         </Typography.Title>
         <Typography>
           <span style={{ fontSize: "16px", color: "#7FB519" }}>20%</span> ўтган

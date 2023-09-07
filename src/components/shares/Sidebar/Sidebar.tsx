@@ -13,14 +13,13 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const NavigateFn = (e: any) => {
-    setNav(e.key);
-    console.log(e.key);
-    localStorage.setItem("item", e.key);
     if (e.key === "/logout") {
       navigate("/auth");
       localStorage.clear();
     } else if (location !== e.key) {
+      setNav(e.key);
       navigate(e.key);
+      localStorage.setItem("item", e.key);
     }
   };
 

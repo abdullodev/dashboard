@@ -4,6 +4,8 @@ const Documents = lazy(() => import("pages/documents/container"));
 const Employee = lazy(() => import("pages/employee/container"));
 const Tasks = lazy(() => import("pages/tasks/container"));
 const User = lazy(() => import("pages/user/container"));
+const UserKpi = lazy(() => import("pages/userKpi/container"));
+const Notfound = lazy(() => import("pages/notfound/Notfound"));
 
 interface IRoutes {
   id: string;
@@ -12,6 +14,11 @@ interface IRoutes {
 }
 
 export const ROUTE_LISTS: IRoutes[] = [
+  {
+    id: "notfound",
+    path: "*",
+    element: <Notfound />,
+  },
   {
     id: "documents",
     path: "/document",
@@ -28,8 +35,13 @@ export const ROUTE_LISTS: IRoutes[] = [
     element: <Tasks />,
   },
   {
-    id: "user-info",
+    id: "user-kpi",
     path: "/user-info",
     element: <User />,
+  },
+  {
+    id: "user-kpi",
+    path: "/user-kpi",
+    element: <UserKpi />,
   },
 ];

@@ -11,8 +11,13 @@ export const CustomTabStyle = styled(Space)`
     .num {
       padding: 3px 5px;
       border-radius: 50%;
+      font-size: 12px;
+      font-weight: 500;
       background-color: #f2f4f7;
       color: #667085;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
     }
     &.active {
       border-color: #4623e9 !important;

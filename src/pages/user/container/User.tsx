@@ -27,7 +27,7 @@ const User = () => {
         xl={{ span: 8, order: 2 }}
       >
         <Space direction="vertical" size={16} style={{ width: "100%" }}>
-          <KpiCard />
+          <KpiCard value={{ number: 73, valueType: "балл" }} />
           <KpiDashboard />
         </Space>
       </Col>
