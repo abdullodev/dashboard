@@ -97,7 +97,7 @@ const ResultMonthly = () => {
               bottom: 10,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid />
             <XAxis
               dataKey="name"
               style={{

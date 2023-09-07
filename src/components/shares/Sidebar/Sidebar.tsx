@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../assets/logoo.png";
 import { BOTTOMITEMS, ITEMS } from "./Sidebar.constants";
 import { SidebarStyled } from "./Sidebar.style";
@@ -23,6 +23,12 @@ const Sidebar = () => {
       navigate(e.key);
     }
   };
+
+  useEffect(() => {
+    if (location.pathname) {
+      setNav(location.pathname);
+    }
+  }, [location.pathname]);
 
   return (
     <SidebarStyled>
