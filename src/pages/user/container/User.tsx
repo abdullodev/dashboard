@@ -1,24 +1,35 @@
-import { Card, Col, Row, Space, Typography } from "antd";
-import UserInfo from "../components/userInfo/UserInfo";
+import { Col, Row, Space } from "antd";
 import KpiCard from "../components/userDashboards/KpiCard";
+import KpiDashboard from "../components/userDashboards/KpiDashboard";
+import ResultDashboard from "../components/userDashboards/ResultDashboard";
+import UserInfo from "../components/userInfo/UserInfo";
+import ResultMonthly from "../components/userDashboards/ResultMonthly";
 
 const User = () => {
   return (
     <Row gutter={[16, 16]}>
-      <Col xs={24} md={16}>
-        <UserInfo />
+      <Col
+        xs={{ span: 24, order: 2 }}
+        sm={{ span: 24, order: 2 }}
+        lg={{ span: 12, order: 1 }}
+        xl={{ span: 16, order: 1 }}
+      >
+        <Space direction="vertical" size={16} style={{ width: "100%" }}>
+          <UserInfo />
+          <ResultDashboard />
+          <ResultMonthly />
+        </Space>
       </Col>
-      <Col xs={24} md={8}>
-        <KpiCard />
-      </Col>
-      <Col xs={24} md={16}>
-        <Typography>Dashboard 1</Typography>
-      </Col>
-      <Col xs={24} md={8}>
-        <Typography>Dashboard 2</Typography>
-      </Col>{" "}
-      <Col xs={24} md={16}>
-        <Typography>Dashboard 3</Typography>
+      <Col
+        xs={{ span: 24, order: 1 }}
+        sm={{ span: 24, order: 1 }}
+        lg={{ span: 12, order: 2 }}
+        xl={{ span: 8, order: 2 }}
+      >
+        <Space direction="vertical" size={16} style={{ width: "100%" }}>
+          <KpiCard />
+          <KpiDashboard />
+        </Space>
       </Col>
     </Row>
   );

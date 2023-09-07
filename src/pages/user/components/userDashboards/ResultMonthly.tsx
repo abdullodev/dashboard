@@ -1,87 +1,86 @@
-import { Typography } from "antd";
+import { Tooltip, Typography } from "antd";
 import { YearFilter } from "components";
+import { StatisticsStyle } from "pages/documents/components/Statistics.style";
 import {
   Bar,
   BarChart,
   CartesianGrid,
   Legend,
   ResponsiveContainer,
-  Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
-import { StatisticsStyle } from "./Statistics.style";
 
 const data = [
   {
     name: "Jan",
-    dataKey: 2400,
-    key1: 7200,
+    dataKey: 69,
+    key1: 55,
   },
   {
     name: "Feb",
     uv: 3000,
-    dataKey: 1398,
-    key1: 9400,
+    dataKey: 65,
+    key1: 55,
   },
   {
     name: "Mar",
-    dataKey: 9800,
-    key1: 6800,
+    dataKey: 52,
+    key1: 55,
   },
   {
     name: "Apr",
-    dataKey: 3908,
-    key1: 5000,
+    dataKey: 45,
+    key1: 55,
   },
   {
     name: "May",
-    dataKey: 4800,
-    key1: 1200,
+    dataKey: 62,
+    key1: 55,
   },
   {
     name: "Jun",
-    dataKey: 3800,
-    key1: 6000,
+    dataKey: 52,
+    key1: 55,
   },
   {
     name: "Jul",
-    dataKey: 4300,
-    key1: 7800,
+    dataKey: 23,
+    key1: 55,
   },
   {
     name: "Avg",
-    dataKey: 4300,
-    key1: 8000,
+    dataKey: 32,
+    key1: 55,
   },
   {
     name: "Sep",
-    dataKey: 4300,
-    key1: 9000,
+    dataKey: 18,
+    key1: 55,
   },
   {
     name: "Oct",
-    dataKey: 4300,
-    key1: 8500,
+    dataKey: 45,
+    key1: 55,
   },
   {
     name: "Nov",
-    dataKey: 4300,
-    key1: 5900,
+    dataKey: 44,
+    key1: 55,
   },
   {
     name: "Dec",
-    dataKey: 4300,
-    key1: 6500,
+    dataKey: 51,
+    key1: 55,
   },
 ];
 
-const Statistics = () => {
+const ResultMonthly = () => {
   return (
     <StatisticsStyle>
       <div className="head">
         <Typography style={{ fontSize: "16px" }}>
-          Spending Statistics
+          Иш натижалари самарадорлиги (ойлар кесимида)
         </Typography>
         <YearFilter />
       </div>
@@ -98,8 +97,15 @@ const Statistics = () => {
               bottom: 10,
             }}
           >
-            <CartesianGrid />
-            <XAxis dataKey="name" />
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              dataKey="name"
+              style={{
+                color: "#101828",
+                fontWeight: "700",
+                fontSize: "12px",
+              }}
+            />
             <YAxis
               yAxisId="left"
               axisLine={false}
@@ -110,16 +116,13 @@ const Statistics = () => {
               }}
               orientation="left"
               stroke="#667085"
-              tickFormatter={(value) =>
-                `$ ${value / 1000 > 1 ? `${Math.floor(value / 1000)}k` : value}`
-              }
             />
             <Tooltip />
             <Legend />
             <Bar
               yAxisId="left"
               dataKey="key1"
-              fill="#4623E9"
+              fill="#725CFF"
               barSize={12}
               radius={[12, 12, 0, 0]}
             />
@@ -130,4 +133,4 @@ const Statistics = () => {
   );
 };
 
-export default Statistics;
+export default ResultMonthly;

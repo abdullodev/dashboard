@@ -1,10 +1,10 @@
 import { Col, Row, Space } from "antd";
-import { DocumentStyle } from "./Document.sgtyle";
-import Statistics from "../components/Statistics";
 import Balance from "../components/Balance";
 import Category from "../components/Category";
-import Transaction from "../components/Transaction";
 import IncomeExpense from "../components/IncomeExpense";
+import Statistics from "../components/Statistics";
+import Transaction from "../components/Transaction";
+import { DocumentStyle } from "./Document.sgtyle";
 
 const Documents = () => {
   return (

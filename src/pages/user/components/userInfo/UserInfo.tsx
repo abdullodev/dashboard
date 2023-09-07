@@ -7,8 +7,8 @@ import { UserInfoStyle } from "./UserInfo.style";
 const UserInfo = () => {
   return (
     <Card>
-      <Row>
-        <Col xs={24} md={7}>
+      <Row gutter={[16, 16]}>
+        <Col xs={24} xxl={7} xl={10}>
           <Image
             width={200}
             height={200}
@@ -16,7 +16,7 @@ const UserInfo = () => {
             style={{ background: "#F9FAFB", padding: "40px" }}
           />
         </Col>
-        <Col xs={24} md={17}>
+        <Col xs={24} xxl={17} xl={14}>
           <UserInfoStyle>
             {userValue.map((user) => (
               <div className="u-info" key={user.title}>

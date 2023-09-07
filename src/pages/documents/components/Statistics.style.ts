@@ -4,9 +4,9 @@ export const StatisticsStyle = styled.div`
   background-color: #ffffff;
   box-shadow: 0px 6px 24px 0px #d0d5dd33;
   width: 100%;
-  height: 420px;
   border-radius: 10px;
   padding: 22px 16px;
+  min-height: 420px;
 
   .head {
     display: flex;
@@ -42,7 +42,7 @@ export const StatisticsStyle = styled.div`
 
   .chart {
     width: 100%;
-    height: 100%;
+    height: 400px;
     padding-top: 40px;
 
     .recharts-legend-wrapper {
@@ -51,6 +51,11 @@ export const StatisticsStyle = styled.div`
     .recharts-bar-rectangle {
       path {
         -moz-outline-radius: 12px;
+      }
+    }
+    .recharts-cartesian-grid-vertical {
+      line {
+        display: none;
       }
     }
   }
