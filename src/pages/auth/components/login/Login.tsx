@@ -19,14 +19,14 @@ const Login = ({ setAuth }: ILogin) => {
         <CustomInput
           name="login"
           label={"Login"}
-          props={{ placeholder: "Login" }}
+          props={{ placeholder: "Login", defaultValue: "abdullo_me" }}
           rules={{ message: "Must be fill th field", value: true }}
         />
         <CustomPassword
           name="password"
           label="Password"
           rules={{ message: "Length must be 6 characters", value: true }}
-          props={{ placeholder: "Password" }}
+          props={{ placeholder: "Password", defaultValue: "abdullo" }}
           icon={<></>}
         />
         <Button htmlType="submit" type="primary" className="login-btn">

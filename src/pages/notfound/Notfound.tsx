@@ -21,7 +21,6 @@ const Notfound = () => {
         <StyledLink onClick={back}>
           <ArrowLeftOutlined />
         </StyledLink>
-        .
       </StyledText>
     </Styled404Page>
   );
