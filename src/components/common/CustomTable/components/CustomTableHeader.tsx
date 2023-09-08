@@ -13,7 +13,7 @@ const CustomTableHeader: React.FC<ICustomTableHeader> = ({
   filter,
 }) => {
   return (
-    <CustomHeaderStyle>
+    <CustomHeaderStyle gutter={[16, 16]}>
       <Col xs={24} md={12}>
         <div
           style={{
