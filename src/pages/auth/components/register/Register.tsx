@@ -52,7 +52,7 @@ const Register = ({ setAuth }: IRegister) => {
         </Button>
 
         <footer>
-          <span>Dont have an account?</span>{" "}
+          <span>Already have an account?</span>
           <Button type="link" onClick={() => setAuth("login")}>
             Login
           </Button>
